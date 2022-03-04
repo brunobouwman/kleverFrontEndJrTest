@@ -1,4 +1,4 @@
-import shootingStar from '../../svgImages/shooting-star.svg';
+import shootingStar from '../../../svgImages/shooting-star.svg'
 
 import classes from './waterMark.module.css';
 

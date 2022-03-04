@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import WaterMark from '../waterMark/waterMark';
+import WaterMark from '../layout/waterMark/waterMark';
 
 import classes from './mainHeader.module.css'
 function MainHeader(props) {
