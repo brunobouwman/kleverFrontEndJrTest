@@ -1,0 +1,14 @@
+.waterMark {
+    display: flex;
+    flex: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: fit-content;
+    max-width: fit-content;
+    color: white;
+}
+
+img {
+    width: 1.5rem;
+    height: 1.5rem;
+}

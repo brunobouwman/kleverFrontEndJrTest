@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+
+import Layout from './components/layout/layout';
+import AddTokenPage from './pages/add/addToken';
+import EditTokenPage from './pages/edit/editToken';
+import HomePage from './pages/home/home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <Switch>
+          <Route exact path='/'>
+            <HomePage />
+            </Route>
+            <Route path='/edit-token'>
+              <EditTokenPage />
+              </Route>
+              <Route path='/add-token'>
+                <AddTokenPage />
+                </Route>
+        </Switch>
+      </Layout>
     </div>
   );
 }

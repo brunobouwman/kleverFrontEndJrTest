@@ -1,0 +1,65 @@
+/* add media queries for dynamic styling */
+
+.mainHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 30rem;
+  min-width: 20rem;
+}
+
+.mainHeader button {
+  background-color: #aa33b5;
+  border-radius: 3px;
+  border: none;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 8px;
+  /* line-height: 20px; */
+  color: white;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.altHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 30rem;
+  min-width: 20rem;
+  margin: auto;
+}
+
+.auxDiv {
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: row; */
+    margin: auto auto auto 2rem;
+}
+
+.altActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 20rem;
+  min-width: 10rem;
+}
+
+.altActions button {
+    cursor: pointer;
+    padding: 3px 20px;
+    color: white;
+    background-color: gray;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.altActions p {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: white;
+    transform: translateY(20%);
+}

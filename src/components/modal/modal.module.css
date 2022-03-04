@@ -1,0 +1,44 @@
+.modal {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 1rem;
+    min-width: 20rem;
+    min-height: 10rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+  }
+
+
+  .modal p {
+    width: fit-content;
+    flex: 2;
+    color: white;
+  }
+
+  .modalActions {
+    width: 80%;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .modal button {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .confirmBtn {
+    background-color: green; 
+    /* put task handler green color */
+
+  }
+
+  .cancelBtn {
+    background-color: red;
+  }

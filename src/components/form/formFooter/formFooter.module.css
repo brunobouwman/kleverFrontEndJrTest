@@ -1,0 +1,49 @@
+.addFooterDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    max-width: 20rem;
+    margin: auto;
+}
+
+.editFooterDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    max-width: 20rem;
+    margin: auto;
+}
+
+.addFooterDiv button,
+.editFooterDiv button {
+    font-size: x-small;
+    padding: 0.2rem 0;
+    border-radius: 4px;
+    width: 4rem;
+    color: white;
+}
+
+.saveBtn {
+    background-color: purple;
+    border: 1px solid purple;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.saveChangesBtn {
+    background-color: purple;
+    border: 1px solid purple;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.removeBtn {
+    background-color: red;
+    border: 1px solid red;
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 5px;
+    cursor: pointer;
+}

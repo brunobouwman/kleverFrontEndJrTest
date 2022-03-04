@@ -1,0 +1,38 @@
+form {
+    padding: 1rem 0;
+    min-width: 10rem;
+    max-width: 20rem;
+    margin: auto;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+label {
+    color: white;
+    font-size: small;
+}
+
+.control {
+    margin-bottom: 0.5rem;
+}
+
+.control input {
+    display: block;
+    font: inherit;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 0.25rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    background-color: white;
+}
+
+.action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
