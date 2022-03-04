@@ -9,6 +9,7 @@ function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedWallet, setLoadedWallet] = useState([]);
 
+
   useEffect(() => {
     setIsLoading(true);
 

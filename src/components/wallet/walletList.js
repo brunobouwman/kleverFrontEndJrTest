@@ -6,7 +6,6 @@ function WalletList(props) {
     // if(!props.wallet) {
     //     return <div className={classes.emptyWallet}><h1>No Tokens</h1></div>
     // }
-    console.log('props.wallet->',props);
   return (
     <section className={classes.walletSection}>
       <div className={classes.walletHeader}>
@@ -17,6 +16,7 @@ function WalletList(props) {
           <ul>
         {props.wallet.map((walletItem) => (
           <WalletItem 
+          key={props.token} 
           token={walletItem.token}
           balance={walletItem.balance} />
         ))}

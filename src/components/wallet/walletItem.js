@@ -1,24 +1,19 @@
 import { useHistory } from 'react-router-dom'
-// import { useContext } from 'react';
+import { useContext } from 'react';
 
 import editIcon from '../../svgImages/edit-icon.svg'
-// import  EditContext  from '../../editContext/editItemContext';
 import classes from './walletItem.module.css';
+import EditContext from '../../edit-context/editContext';
 
 function WalletItem(props) {
   const history = useHistory();
-  // const editContextObj = useContext(EditContext);
-
-  console.log('walletItem', props.token, props.balance);
-
+  const editContextObj = useContext(EditContext);
   // const [item, setItem] = useContext(EditContext);
+  // console.log('walletItem', props.token, props.balance);
 
-  //   function editItemHandler() {
-  //     editContextObj.editItem(props.token);
-  //     history.replace('/edit-token');
-  //   };
-
-  function editTokenHandler() {
+    function editTokenHandler() {
+      console.log('props->', props)
+      editContextObj.editItem(props.token);
       history.replace('/edit-token');
   }
 

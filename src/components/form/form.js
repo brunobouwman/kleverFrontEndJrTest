@@ -1,7 +1,7 @@
 // import { type } from '@testing-library/user-event/dist/type';
 import { useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-// import EditContext from '../editContext/editItemContext';
+import EditContext from '../../edit-context/editContext';
 import classes from './form.module.css';
 import FormFooter from './formFooter/formFooter';
 
@@ -9,10 +9,10 @@ function Form(props) {
   const history = useHistory();
   const tokenInputRef = useRef();
   const balanceInputRef = useRef();
-//   const contextObj = useContext(EditContext);
+  const contextObj = useContext(EditContext);
 
   function addTokenHandler() {
-    const enteredToken = tokenInputRef.current.value;
+    const enteredToken = tokenInputRef.current.value.toUpperCase();
     const enteredBalance = balanceInputRef.current.value;
     if (
       enteredToken.length === 0 ||
@@ -23,34 +23,38 @@ function Form(props) {
       alert('All fields are required, please check your inputs!');
       return;
     }
+    if (enteredToken.length !== 3) {
+      alert('All Tokens must have 3 letters!');
+      return;
+    }
     const newTokenData = {
       token: enteredToken,
       balance: enteredBalance,
     };
-    // console.log(newTokenData);
+    if (localStorage.getItem(newTokenData.token)) {
+      alert(
+        'A token with this name already exists in your wallet. Try another name!'
+      );
+      return;
+    }
     localStorage.setItem(newTokenData.token, JSON.stringify(newTokenData));
-    history.replace('/')
+    history.replace('/');
   }
 
   function removeTokenHandler() {
-      props.onRemove();
-  };
+    props.onRemove();
+  }
 
   function saveChangesHandler() {
-    const editedToken = tokenInputRef.current.value;
+    const editedToken = tokenInputRef.current.value.toUpperCase();
     const editedBalance = balanceInputRef.current.value;
-    // console.log(
-    //   'edite->',
-    //   editedToken,
-    //   'state->',
-    //   contextObj.itemToBeEdited.token
-    // );
 
-    // if((editedToken) && (localStorage.key(contextObj.itemToBeEdited.token))) {
-    //   alert('A token with this name already exists in your walelt. Please try another one!');
-    //   return;
-    // }
-
+    console.log(
+      'newToken->',
+      editedToken,
+      'nameBefore->',
+      contextObj.toBeEdited
+    );
     if (
       editedToken.length === 0 ||
       editedToken.trim('') === '' ||
@@ -60,34 +64,34 @@ function Form(props) {
       alert('All fields are required, please check your inputs!');
       return;
     }
+    if (localStorage.getItem(editedToken)) {
+      alert(
+        'A token with this name already exists in your wallet. Try another name!'
+      );
+      return;
+    }
     const newTokenData = {
       token: editedToken,
       balance: editedBalance,
     };
-
-    props.onEditToken(newTokenData);
+    localStorage.removeItem(contextObj.toBeEdited.token);
+    localStorage.setItem(editedToken, JSON.stringify(newTokenData));
     history.replace('/');
   }
-
-  // const tokenHandler = contextObj.itemToBeEdited.token;
-
-  // console.log(typeof(tokenHandler));
-  // const tokenInputHandler = contextObj.itemToBeEdited.token.toString();
-  // console.log(tokenInputHandler);
-
   return (
     <div className={classes.formContainer}>
-
       <form>
         <div className={classes.control}>
           <label htmlFor="token">Token</label>
           <input
             type="text"
             id="token"
-            defaultValue={ ''
-            //   props.formType === 'add' ? '' : contextObj.itemToBeEdited.token
+            defaultValue={
+              props.type === 'add' ? '' : contextObj.toBeEdited.token
             }
             ref={tokenInputRef}
+            maxLength={3}
+            // autocapitalize='characters'
             required
           />
         </div>
@@ -96,28 +100,20 @@ function Form(props) {
           <input
             type="number"
             id="balance"
-            defaultValue={''
-            //   props.formType === 'add' ? '' : contextObj.itemToBeEdited.balance
+            defaultValue={
+              props.type === 'add' ? '' : contextObj.toBeEdited.balance
             }
             ref={balanceInputRef}
             required
           />
         </div>
       </form>
-      <FormFooter footerType={props.type} onSave={saveChangesHandler} onRemove={removeTokenHandler} onAdd={addTokenHandler} />
-      {/* {props.footerype === 'edit' ? (
-        <WalletFooter
-          footerType={props.footerType}
-          onRemove={props.onRemove}
-          onSave={saveChanges}
-        />
-      ) : (
-        <WalletFooter
-          footerType={props.footerType}
-          formType={props.footerType}
-          onAddToken={formSubmitHandler}
-        />
-      )} */}
+      <FormFooter
+        footerType={props.type}
+        onSave={saveChangesHandler}
+        onRemove={removeTokenHandler}
+        onAdd={addTokenHandler}
+      />
     </div>
   );
 }
