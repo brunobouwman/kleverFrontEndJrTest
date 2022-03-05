@@ -23,10 +23,6 @@ function Form(props) {
       alert('All fields are required, please check your inputs!');
       return;
     }
-    if (enteredToken.length !== 3) {
-      alert('All Tokens must have 3 letters!');
-      return;
-    }
     const newTokenData = {
       token: enteredToken,
       balance: enteredBalance,
@@ -61,7 +57,10 @@ function Form(props) {
       alert('All fields are required, please check your inputs!');
       return;
     }
-    if (localStorage.getItem(editedToken) && editedBalance === contextObj.toBeEdited.balance) {
+    if (
+      localStorage.getItem(editedToken) &&
+      editedBalance === contextObj.toBeEdited.balance
+    ) {
       alert(
         'This token already exists in your wallet. Try another name or change the balance!'
       );
@@ -88,8 +87,6 @@ function Form(props) {
               props.type === 'add' ? '' : contextObj.toBeEdited.token
             }
             ref={tokenInputRef}
-            maxLength={3}
-            // autocapitalize='characters'
             required
           />
         </div>
