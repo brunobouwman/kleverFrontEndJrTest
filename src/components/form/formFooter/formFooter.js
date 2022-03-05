@@ -1,11 +1,12 @@
-import classes from './formFooter.module.css'
+import classes from './formFooter.module.css';
 
 function FormFooter(props) {
-
   if (props.footerType === 'add') {
     return (
       <div className={classes.addFooterDiv}>
-        <button className={classes.saveBtn} onClick={props.onAdd} >Save</button>
+        <button className={classes.saveBtn} onClick={props.onAdd}>
+          Save
+        </button>
       </div>
     );
   } else
@@ -14,7 +15,7 @@ function FormFooter(props) {
         <button className={classes.removeBtn} onClick={props.onRemove}>
           Remove
         </button>
-        <button className={classes.saveChangesBtn} onClick={props.onSave}>
+        <button className={classes.saveBtn} onClick={props.onSave}>
           Save
         </button>
       </div>

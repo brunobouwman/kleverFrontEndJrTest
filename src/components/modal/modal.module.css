@@ -1,44 +1,50 @@
 .modal {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
-    padding: 1rem;
-    min-width: 20rem;
-    min-height: 10rem;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-  }
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 1rem;
+  width: 30rem;
+  height: 16rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
 
+.modal p {
+  width: fit-content;
+  font-size: 2.5rem;
+  flex: 2;
+  color: white;
+}
 
-  .modal p {
-    width: fit-content;
-    flex: 2;
-    color: white;
-  }
+.modalActions {
+  width: 80%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+}
 
-  .modalActions {
-    width: 80%;
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
+.modal button {
+  padding: 0.5rem;
+  width: 7rem;
+  height: 3rem;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: white;
+  border-radius: 3px;
+}
 
+.confirmBtn {
+  background-color: #4ebc87;
+  border: 1px solid #4ebc87;
+  /* put task handler green color */
+}
 
-  .modal button {
-    padding: 0.5rem;
-    cursor: pointer;
-  }
-
-  .confirmBtn {
-    background-color: green; 
-    /* put task handler green color */
-
-  }
-
-  .cancelBtn {
-    background-color: red;
-  }
+.cancelBtn {
+  background-color: #f84960;
+  border: 1px solid #f84960;
+}

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: top;
-    max-width: 20rem;
+    max-width: 26.5rem;
     margin: auto;
 }
 
@@ -10,40 +10,32 @@
     display: flex;
     justify-content: space-between;
     align-items: top;
-    max-width: 20rem;
+    max-width: 26.5rem;
     margin: auto;
 }
 
 .addFooterDiv button,
 .editFooterDiv button {
-    font-size: x-small;
-    padding: 0.2rem 0;
+    /* font-size: x-small; */
+    font-size: 1rem;
+    /* padding: 0.5rem 1rem; */
     border-radius: 4px;
-    width: 4rem;
+    width: 7rem;
     color: white;
+    height: 2.2rem;
+    text-align: center;
 }
 
 .saveBtn {
-    background-color: purple;
-    border: 1px solid purple;
-    width: fit-content;
-    height: fit-content;
+    background-color: rgb(194, 12, 194);
+    border: 1px solid rgb(201, 21, 201);
     cursor: pointer;
 }
 
-.saveChangesBtn {
-    background-color: purple;
-    border: 1px solid purple;
-    width: fit-content;
-    height: fit-content;
-    cursor: pointer;
-}
 
 .removeBtn {
     background-color: red;
     border: 1px solid red;
-    width: fit-content;
-    height: fit-content;
-    padding: 3px 5px;
     cursor: pointer;
+    transform: translateX(34%);
 }

@@ -5,7 +5,7 @@ main {
 
 .layout {
     padding-top: 0.7rem;
-    margin: 0;
+    margin: auto;
     box-sizing: border-box;
     background-color: #13152a;
     height: 100%;

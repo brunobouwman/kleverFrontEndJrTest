@@ -42,19 +42,16 @@ function Form(props) {
   }
 
   function removeTokenHandler() {
-    props.onRemove();
+    const enteredToken = tokenInputRef.current.value.toUpperCase();
+    if (!localStorage.getItem(enteredToken)) {
+      alert("Couldn't find this token in your wallet. Try another name!");
+      return;
+    } else props.onRemove();
   }
 
   function saveChangesHandler() {
     const editedToken = tokenInputRef.current.value.toUpperCase();
     const editedBalance = balanceInputRef.current.value;
-
-    console.log(
-      'newToken->',
-      editedToken,
-      'nameBefore->',
-      contextObj.toBeEdited
-    );
     if (
       editedToken.length === 0 ||
       editedToken.trim('') === '' ||
@@ -86,7 +83,7 @@ function Form(props) {
           <input
             type="text"
             id="token"
-            step={0.0001}
+            step={0}
             defaultValue={
               props.type === 'add' ? '' : contextObj.toBeEdited.token
             }

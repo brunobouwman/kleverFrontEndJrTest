@@ -30,6 +30,10 @@ function HomePage() {
 
   if (isLoading) {
     return (
+      <section className={classes.homePageSection}>
+      <div className={classes.homePageDiv}>
+          <MainHeader type={'Home'} />
+          </div>
         <section className={classes.loadingPage}>
         <div className={classes.skChase}>
         <div className={classes.skChaseDot}></div>
@@ -39,6 +43,7 @@ function HomePage() {
         <div className={classes.skChaseDot}></div>
         <div className={classes.skChaseDot}></div>
       </div>
+      </section>
       </section>
     );
   }
