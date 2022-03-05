@@ -61,9 +61,9 @@ function Form(props) {
       alert('All fields are required, please check your inputs!');
       return;
     }
-    if (localStorage.getItem(editedToken)) {
+    if (localStorage.getItem(editedToken) && editedBalance === contextObj.toBeEdited.balance) {
       alert(
-        'A token with this name already exists in your wallet. Try another name!'
+        'This token already exists in your wallet. Try another name or change the balance!'
       );
       return;
     }

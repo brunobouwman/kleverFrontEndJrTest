@@ -4,11 +4,9 @@ import WalletList from '../../components/wallet/walletList';
 import MainHeader from '../../components/mainHeader/mainHeader';
 import classes from './home.module.css';
 
-
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedWallet, setLoadedWallet] = useState([]);
-
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,19 +29,19 @@ function HomePage() {
   if (isLoading) {
     return (
       <section className={classes.homePageSection}>
-      <div className={classes.homePageDiv}>
+        <div className={classes.homePageDiv}>
           <MainHeader type={'Home'} />
-          </div>
+        </div>
         <section className={classes.loadingPage}>
-        <div className={classes.skChase}>
-        <div className={classes.skChaseDot}></div>
-        <div className={classes.skChaseDot}></div>
-        <div className={classes.skChaseDot}></div>
-        <div className={classes.skChaseDot}></div>
-        <div className={classes.skChaseDot}></div>
-        <div className={classes.skChaseDot}></div>
-      </div>
-      </section>
+          <div className={classes.skChase}>
+            <div className={classes.skChaseDot}></div>
+            <div className={classes.skChaseDot}></div>
+            <div className={classes.skChaseDot}></div>
+            <div className={classes.skChaseDot}></div>
+            <div className={classes.skChaseDot}></div>
+            <div className={classes.skChaseDot}></div>
+          </div>
+        </section>
       </section>
     );
   }
