@@ -86,6 +86,7 @@ function Form(props) {
           <input
             type="text"
             id="token"
+            step={0.0001}
             defaultValue={
               props.type === 'add' ? '' : contextObj.toBeEdited.token
             }

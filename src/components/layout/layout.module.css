@@ -4,7 +4,7 @@ main {
 }
 
 .layout {
-    padding: 0;
+    padding-top: 0.7rem;
     margin: 0;
     box-sizing: border-box;
     background-color: #13152a;
@@ -14,14 +14,14 @@ main {
 
 .header {
     max-width: 80%;
-    margin: 0 auto;
-    height: 5rem;
+    margin: 2rem auto 1.5rem auto;
+    height: 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .logo{
-    height: 5rem;
-    width: 7rem;
+    height: 10rem;
+    width: 10rem;
 }

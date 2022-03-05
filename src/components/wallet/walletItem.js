@@ -12,7 +12,6 @@ function WalletItem(props) {
   // console.log('walletItem', props.token, props.balance);
 
     function editTokenHandler() {
-      console.log('props->', props)
       editContextObj.editItem(props.token);
       history.replace('/edit-token');
   }
@@ -24,7 +23,9 @@ function WalletItem(props) {
         <button onClick={editTokenHandler}><img src={editIcon} alt="edit"/></button>
           <p>{props.token}</p>
         </div>
-        <p>{props.balance}</p>
+        <div className={classes.balance}>
+        <span>{props.balance}</span>
+        </div>
       </div>
     </li>
   );
