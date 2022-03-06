@@ -1,4 +1,6 @@
-.waterMark {
+@media screen and (max-width: 600px) {
+
+  .waterMark {
   display: flex;
   flex: row;
   justify-content: space-evenly;
@@ -9,12 +11,40 @@
   color: white;
 }
 
-.waterMark img {
-  width: 2rem;
-  height: 2rem;
-  margin: 0.4rem;
+  .waterMark h2 {
+    margin-right: 0;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0.4rem;
+  }
+
+  .waterMark img {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
-.waterMark h2 {
-  margin-right: 8.3rem;
+
+
+@media screen and (min-width: 600px) {
+  .waterMark {
+    display: flex;
+    flex: row;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: fit-content;
+    max-width: fit-content;
+    transform: translateX(5%);
+    color: white;
+  }
+
+  .waterMark img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.4rem;
+  }
+
+  .waterMark h2 {
+    margin-right: 8.3rem;
+  }
 }

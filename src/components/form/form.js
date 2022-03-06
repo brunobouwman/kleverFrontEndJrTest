@@ -5,6 +5,7 @@ import EditContext from '../../edit-context/editContext';
 import classes from './form.module.css';
 import FormFooter from './formFooter/formFooter';
 
+
 function Form(props) {
   const history = useHistory();
   const tokenInputRef = useRef();

@@ -1,4 +1,28 @@
 /* add media queries for dynamic styling */
+@media screen and (max-width: 590px) {
+  .mainHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: auto;
+    }
+
+    .mainHeader button {
+      background-color: #aa33b5;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 10px;
+      padding: 6px 15px;
+      cursor: pointer;
+      color: white;
+      border: none;
+      margin-top: 0.5rem;
+      transform: translateX(25%);
+    }
+}
+
+@media screen and (min-width: 600px) {
 
 .mainHeader {
   display: flex;
@@ -41,15 +65,15 @@
 }
 
 .auxDiv button {
-    background-color: #aa33b5;
-    border-radius: 5px;
-    border: none;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    color: white;
-    padding: 8px 20px;
-    cursor: pointer;
+  background-color: #aa33b5;
+  border-radius: 5px;
+  border: none;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  color: white;
+  padding: 8px 20px;
+  cursor: pointer;
 }
 
 .buttonPlaceAux {
@@ -67,18 +91,20 @@
 }
 
 .altActions button {
-    cursor: pointer;
-    padding: 0.5rem 2rem;
-    color: white;
-    background-color: rgba(118, 110, 110, 0.837);
-    border: none;
-    border-radius: 3px;
-    font-size: 15px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  color: white;
+  background-color: rgba(118, 110, 110, 0.837);
+  border: none;
+  border-radius: 3px;
+  font-size: 15px;
 }
 
 .altActions p {
-    font-weight: 700;
-    color: white;
-    margin: 0;
-    transform: translateX(-15%);
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  transform: translateX(-15%);
+}
+
 }

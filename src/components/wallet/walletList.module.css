@@ -1,9 +1,57 @@
-.walletSection {
+@media screen and (max-width: 600px) {
+  .walletSection {
     width: 100%;
     height: 100%;
+  }
+
+  .walletHeader {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 26.5rem;
+    margin: 1.5rem auto 1rem auto;
+    height: 1.5rem;
+  }
+
+  .walletHeader p {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .walletHeader p:first-child {
+    margin-left: 3rem;
+  }
+
+  .walletContent {
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 27rem;
+    min-width: fit-content;
+    /* margin-right: 0.5rem; */
+  }
+
+  .walletContent ul {
+    list-style-type: none;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    color: white;
+    width: 100%;
+  }
 }
 
-.walletHeader {
+@media screen and (min-width: 600px) {
+  .walletSection {
+    width: 100%;
+    height: 100%;
+  }
+
+  .walletHeader {
     color: white;
     display: flex;
     flex-direction: row;
@@ -12,33 +60,33 @@
     max-width: 26.5rem;
     margin: 1.5rem auto 1rem auto;
     height: 2rem;
+  }
 
-}
-
-.walletHeader p {
+  .walletHeader p {
     font-weight: 700;
     font-style: normal;
     font-size: 1rem;
     margin-bottom: 0;
-}
+  }
 
-.walletHeader p:first-child {
+  .walletHeader p:first-child {
     margin-left: 3rem;
-}
+  }
 
-.walletContent {
+  .walletContent {
     display: flex;
     margin: auto;
     flex-direction: row;
     justify-content: space-between;
     max-width: 27rem;
     min-width: 10rem;
-}
+  }
 
-.walletContent ul {
+  .walletContent ul {
     list-style-type: none;
     margin: 0 auto 0 auto;
     padding: 0;
     color: white;
     width: 100%;
+  }
 }
