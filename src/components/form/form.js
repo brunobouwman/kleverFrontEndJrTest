@@ -1,10 +1,10 @@
 // import { type } from '@testing-library/user-event/dist/type';
 import { useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import IMask from 'imask';
 import EditContext from '../../edit-context/editContext';
 import classes from './form.module.css';
 import FormFooter from './formFooter/formFooter';
-
 
 function Form(props) {
   const history = useHistory();
@@ -15,6 +15,7 @@ function Form(props) {
   function addTokenHandler() {
     const enteredToken = tokenInputRef.current.value.toUpperCase();
     const enteredBalance = balanceInputRef.current.value;
+
     if (
       enteredToken.length === 0 ||
       enteredToken.trim('') === '' ||
