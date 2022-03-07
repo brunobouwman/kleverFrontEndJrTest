@@ -22,6 +22,9 @@ function HomePage() {
       };
       items.push(walletContent);
     }
+    items.sort((a,b) => {
+      return b.balance - a.balance;
+    });
     setLoadedWallet(items);
     setIsLoading(false);
   }, []);
