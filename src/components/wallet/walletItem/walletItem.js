@@ -1,9 +1,9 @@
 import { useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 
-import editIcon from '../../svgImages/edit-icon.svg';
+import editIcon from '../../../svgImages/edit-icon.svg'
 import classes from './walletItem.module.css';
-import EditContext from '../../edit-context/editContext';
+import EditContext from '../../../edit-context/editContext'
 
 function WalletItem(props) {
   const history = useHistory();

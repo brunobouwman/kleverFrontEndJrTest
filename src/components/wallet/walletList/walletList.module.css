@@ -2,6 +2,18 @@
   .walletSection {
     width: 90%;
     height: 100%;
+    margin-top: 2rem;
+  }
+
+  .total {
+    height: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: large;
+    margin: 1rem auto;
+    max-width: 26.5rem;
   }
 
   .walletHeader {
@@ -11,7 +23,7 @@
     align-items: center;
     justify-content: space-between;
     max-width: 26.5rem;
-    margin: 1.5rem auto 1rem auto;
+    margin: 1rem auto 1rem auto;
     height: 1.5rem;
   }
 
@@ -50,6 +62,27 @@
     height: 100%;
   }
 
+  .total {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: large;
+    margin: 0 auto;
+    max-width: 26.5rem;
+    font-weight: 700;
+  }
+
+  .total div:first-of-type {
+    flex: 4;
+  }
+
+  .total div:last-of-type {
+    flex: 2;
+    min-width: fit-content;
+  }
+
   .walletHeader {
     color: white;
     display: flex;
@@ -57,7 +90,7 @@
     align-items: center;
     justify-content: space-between;
     max-width: 26.5rem;
-    margin: 1.5rem auto 1rem auto;
+    margin: 1rem auto 1rem auto;
     height: 2rem;
   }
 

@@ -6,106 +6,171 @@
     justify-content: center;
     align-items: center;
     min-width: auto;
-    }
+    height: 7.5rem;
+  }
 
-    .mainHeader button {
-      background-color: #aa33b5;
-      border-radius: 5px;
-      font-weight: 600;
-      font-size: 10px;
-      padding: 6px 3rem;
-      cursor: pointer;
-      color: white;
-      border: none;
-      margin-top: 0.5rem;
-      transform: translateX(10%);
-    }
+  .mainHeader button {
+    background-color: #aa33b5;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 0.5rem 3.3rem;
+    width: 65vw;
+    cursor: pointer;
+    color: white;
+    border: none;
+    margin: 1rem auto auto auto;
+    /* transform: translateX(-5%); */
+  }
+
+  .altHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 20rem;
+    min-width: 10rem;
+    margin: 1rem auto 2rem auto;
+    transform: translate(5.3%, 6.2%);
+  }
+
+  .auxDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    min-width: 15rem;
+    white-space: nowrap;
+    transform: translateX(25%);
+  }
+
+  .auxDiv button {
+    background-color: #aa33b5;
+    border-radius: 5px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
+  .buttonPlaceAux {
+    display: none;
+  }
+
+  .altActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 23rem;
+    min-width: 10rem;
+    transform: translateY(50%);
+    margin: 1rem auto 0 auto;
+  }
+
+  .altActions button {
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    color: white;
+    background-color: rgba(118, 110, 110, 0.837);
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+  }
+
+  .altActions p {
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    /* transform: translateX(-15%); */
+  }
 }
 
 @media screen and (min-width: 600px) {
+  .mainHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 15rem;
+    white-space: nowrap;
+    transform: translateY(-10%);
+  }
 
-.mainHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 15rem;
-  white-space: nowrap;
-  transform: translateY(-10%);
-}
+  .mainHeader button {
+    background-color: #aa33b5;
+    border-radius: 5px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
 
-.mainHeader button {
-  background-color: #aa33b5;
-  border-radius: 5px;
-  border: none;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  color: white;
-  padding: 8px 20px;
-  cursor: pointer;
-}
+  .altHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 30rem;
+    min-width: 15rem;
+    margin: 1rem auto 2rem auto;
+    transform: translate(5.3%, 6.2%);
+  }
 
-.altHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 30rem;
-  min-width: 15rem;
-  margin: 1rem auto 2rem auto;
-  transform: translate(5.3%, 6.2%);
-}
+  .auxDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 15rem;
+    white-space: nowrap;
+  }
 
-.auxDiv {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 15rem;
-  white-space: nowrap;
-}
+  .auxDiv button {
+    background-color: #aa33b5;
+    border-radius: 5px;
+    border: none;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
 
-.auxDiv button {
-  background-color: #aa33b5;
-  border-radius: 5px;
-  border: none;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  color: white;
-  padding: 8px 20px;
-  cursor: pointer;
-}
+  .buttonPlaceAux {
+    width: 7.25rem;
+  }
 
-.buttonPlaceAux {
-  width: 7.25rem;
-}
+  .altActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 23rem;
+    min-width: 15rem;
+    transform: translateY(50%);
+  }
 
-.altActions {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 23rem;
-  min-width: 15rem;
-  transform: translateY(50%);
-}
+  .altActions button {
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    color: white;
+    background-color: rgba(118, 110, 110, 0.837);
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+  }
 
-.altActions button {
-  cursor: pointer;
-  padding: 0.5rem 2rem;
-  color: white;
-  background-color: rgba(118, 110, 110, 0.837);
-  border: none;
-  border-radius: 3px;
-  font-size: 15px;
-}
-
-.altActions p {
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  transform: translateX(-15%);
-}
-
+  .altActions p {
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    transform: translateX(-15%);
+  }
 }

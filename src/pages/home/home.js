@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import WalletList from '../../components/wallet/walletList';
+import WalletList from '../../components/wallet/walletList/walletList';
 import MainHeader from '../../components/mainHeader/mainHeader';
 import classes from './home.module.css';
-import TotalBalance from '../../components/wallet/walletTotal/walletTotal';
+// import WalletTotal from '../../components/wallet/walletTotal/walletTotal';
+// import TotalBalance from '../../components/wallet/walletTotal/walletTotal';
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +24,9 @@ function HomePage() {
       };
       items.push(walletContent);
     }
+    items.sort((a,b) => {
+      return b.balance - a.balance;
+    })
     setLoadedWallet(items);
     setIsLoading(false);
   }, []);

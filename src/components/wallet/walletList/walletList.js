@@ -1,9 +1,14 @@
-import WalletItem from './walletItem';
+import WalletItem from '../walletItem/walletItem';
+import WalletTotal from '../walletTotal/walletTotal';
 import classes from './walletList.module.css';
 
 function WalletList(props) {
   return (
     <section className={classes.walletSection}>
+      <div className={classes.total}>
+        <div></div>
+        <WalletTotal total={props.wallet} />
+        </div>
       <div className={classes.walletHeader}>
         <p>Tokens</p>
         <p>Balance</p>
