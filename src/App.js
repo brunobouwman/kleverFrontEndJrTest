@@ -10,15 +10,15 @@ function App() {
     <div className="App">
       <Layout>
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <HomePage />
-            </Route>
-            <Route path='/edit-token'>
-              <EditTokenPage />
-              </Route>
-              <Route path='/add-token'>
-                <AddTokenPage />
-                </Route>
+          </Route>
+          <Route path="/edit-token">
+            <EditTokenPage />
+          </Route>
+          <Route path="/add-token">
+            <AddTokenPage />
+          </Route>
         </Switch>
       </Layout>
     </div>
