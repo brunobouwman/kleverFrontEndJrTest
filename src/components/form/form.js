@@ -1,7 +1,6 @@
 // import { type } from '@testing-library/user-event/dist/type';
 import { useRef, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import IMask from 'imask';
 import EditContext from '../../edit-context/editContext';
 import classes from './form.module.css';
 import FormFooter from './formFooter/formFooter';

@@ -1,14 +1,14 @@
 @media screen and (max-width: 600px) {
-    .header {
-        max-width: 80%;
-        margin: 2rem auto 1.5rem auto;
-        height: 2.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-  
-    .logo {
+  .header {
+    max-width: 80%;
+    margin: 2rem auto 1.5rem auto;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo {
     height: 8rem;
     width: 8rem;
   }
