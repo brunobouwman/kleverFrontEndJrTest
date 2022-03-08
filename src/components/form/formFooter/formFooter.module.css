@@ -1,68 +1,65 @@
-@media screen and (max-width:600px) {
+@media screen and (max-width: 600px) {
+  .addFooterDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: top;
+    max-width: 22rem;
+    margin: auto;
+  }
 
-    .addFooterDiv {
-        display: flex;
-        justify-content: flex-end;
-        align-items: top;
-        max-width: 22rem;
-        margin: auto;
-    }
-    
-    .editFooterDiv {
-        display: flex;
-        justify-content: space-between;
-        align-items: top;
-        max-width: 22rem;
-        margin: auto;
-    }
-    
-    .addFooterDiv button,
-    .editFooterDiv button {
-        /* font-size: x-small; */
-        font-size: 0.8rem;
-        /* padding: 0.5rem 0.7rem; */
-        border-radius: 4px;
-        width: 6rem;
-        color: white;
-        height: 2.2rem;
-        text-align: center;
-    }
-    
-    .saveBtn {
-        background-color: rgb(194, 12, 194);
-        border: 1px solid rgb(201, 21, 201);
-        cursor: pointer;
-    }
-    
-    
-    .removeBtn {
-        background-color: red;
-        border: 1px solid red;
-        cursor: pointer;
-        transform: translateX(34%);
-    }
+  .editFooterDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    max-width: 22rem;
+    margin: auto;
+  }
+
+  .addFooterDiv button,
+  .editFooterDiv button {
+    /* font-size: x-small; */
+    font-size: 0.8rem;
+    /* padding: 0.5rem 0.7rem; */
+    border-radius: 4px;
+    width: 6rem;
+    color: white;
+    height: 2.2rem;
+    text-align: center;
+  }
+
+  .saveBtn {
+    background-color: rgb(194, 12, 194);
+    border: 1px solid rgb(201, 21, 201);
+    cursor: pointer;
+  }
+
+  .removeBtn {
+    background-color: red;
+    border: 1px solid red;
+    cursor: pointer;
+    transform: translateX(34%);
+  }
 }
- 
-@media screen and (min-width:600px) {
-    
-.addFooterDiv {
+
+@media screen and (min-width: 600px) {
+  .addFooterDiv {
     display: flex;
     justify-content: flex-end;
     align-items: top;
     max-width: 26.5rem;
     margin: auto;
-}
+  }
 
-.editFooterDiv {
+  .editFooterDiv {
     display: flex;
     justify-content: space-between;
     align-items: top;
     max-width: 26.5rem;
     margin: auto;
-}
+  }
 
-.addFooterDiv button,
-.editFooterDiv button {
+  .addFooterDiv button,
+  .editFooterDiv button {
     /* font-size: x-small; */
     font-size: 1rem;
     /* padding: 0.5rem 1rem; */
@@ -71,19 +68,18 @@
     color: white;
     height: 2.2rem;
     text-align: center;
-}
+  }
 
-.saveBtn {
+  .saveBtn {
     background-color: rgb(194, 12, 194);
     border: 1px solid rgb(201, 21, 201);
     cursor: pointer;
-}
+  }
 
-
-.removeBtn {
+  .removeBtn {
     background-color: red;
     border: 1px solid red;
     cursor: pointer;
     transform: translateX(34%);
-}
+  }
 }

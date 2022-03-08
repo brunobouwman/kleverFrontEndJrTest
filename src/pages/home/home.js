@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import WalletList from '../../components/wallet/walletList/walletList';
 import MainHeader from '../../components/mainHeader/mainHeader';
 import classes from './home.module.css';
+// import TransactionList from '../../components/transactionList/transactionList';
+import axios from 'axios';
+import TransactionList from '../../components/transactionList/transactionList';
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +34,7 @@ function HomePage() {
   }, []);
 
   if (isLoading) {
+
     return (
       <section className={classes.homePageSection}>
         <div className={classes.homePageDiv}>
@@ -49,6 +53,7 @@ function HomePage() {
       </section>
     );
   }
+  
   return (
     <section className={classes.homePageSection}>
       <div className={classes.homePageDiv}>
@@ -56,6 +61,9 @@ function HomePage() {
       </div>
       <div className={classes.walletContent}>
         <WalletList wallet={loadedWallet} />
+      </div>
+      <div>
+        <TransactionList />
       </div>
     </section>
   );

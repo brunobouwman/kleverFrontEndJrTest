@@ -3,14 +3,14 @@ import logo from '../../svgImages/klever-logo.svg';
 import classes from './layout.module.css';
 
 function Layout(props) {
-  return <section className={classes.layout}>
-        <section className={classes.header} >
-            <img src={logo} className={classes.logo} alt="klever-logo" />
-            </section>
-            <main>
-                {props.children}
-            </main>
-      </section>;
+  return (
+    <section className={classes.layout}>
+      <section className={classes.header}>
+        <img src={logo} className={classes.logo} alt="klever-logo" />
+      </section>
+      <main>{props.children}</main>
+    </section>
+  );
 }
 
 export default Layout;

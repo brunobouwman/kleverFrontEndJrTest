@@ -1,4 +1,6 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
   font-family: 'Varela Round', sans-serif;
 }
@@ -10,7 +12,6 @@ body {
   width: 100vw;
   background-color: #13152a;
 }
-
 
 div {
   width: 100%;
