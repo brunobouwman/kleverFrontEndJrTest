@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import WalletList from '../../components/wallet/walletList';
+import WalletList from '../../components/wallet/walletList/walletList';
 import MainHeader from '../../components/mainHeader/mainHeader';
 import classes from './home.module.css';
 

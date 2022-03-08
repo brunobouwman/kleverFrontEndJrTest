@@ -1,4 +1,4 @@
-import WalletItem from './walletItem/walletItem';
+import WalletItem from '../walletItem/walletItem';
 import classes from './walletList.module.css'
 
 function WalletList(props) {
