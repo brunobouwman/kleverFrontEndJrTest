@@ -27,7 +27,7 @@ function MainHeader(props) {
   if (headerType === 0) {
     return (
       <section className={classes.mainHeader}>
-          <WaterMark />
+        <WaterMark />
         <div>
           <button onClick={addTokenHandler}>Add Token</button>
         </div>
@@ -37,9 +37,9 @@ function MainHeader(props) {
     return (
       <section className={classes.altHeader}>
         <div className={classes.auxDiv}>
-            <div>
-          <WaterMark />
-            </div>
+          <div>
+            <WaterMark />
+          </div>
           <div className={classes.buttonPlaceAux}></div>
         </div>
         <div className={classes.altActions}>

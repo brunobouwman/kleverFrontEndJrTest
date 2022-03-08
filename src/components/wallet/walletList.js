@@ -1,5 +1,5 @@
-import WalletItem from './walletItem';
-import classes from './walletList.module.css';
+import WalletItem from './walletItem/walletItem';
+import classes from './walletList.module.css'
 
 function WalletList(props) {
   return (
