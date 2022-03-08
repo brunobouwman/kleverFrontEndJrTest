@@ -2,7 +2,7 @@ import classes from './walletTotal.module.css';
 
 function WalletTotal(props) {
   const TotalBalance = props.total.reduce(
-    (total, curValue) => total + parseInt(curValue.balance),
+    (total, curValue) => total + (parseInt(curValue.balance)*curValue.curPrice),
     0
   );
 
@@ -12,7 +12,7 @@ function WalletTotal(props) {
   return (
     <div className={classes.total}>
       <span>Total: </span>
-      <span>{`$${totalBalanceinDollars}`}</span>
+      <span>{`$${totalBalanceinDollars.toFixed(2)}`}</span>
     </div>
   );
 }

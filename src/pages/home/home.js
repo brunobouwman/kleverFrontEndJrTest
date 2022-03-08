@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import WalletList from '../../components/wallet/walletList/walletList';
 import MainHeader from '../../components/mainHeader/mainHeader';
 import classes from './home.module.css';
-// import WalletTotal from '../../components/wallet/walletTotal/walletTotal';
-// import TotalBalance from '../../components/wallet/walletTotal/walletTotal';
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,12 +19,13 @@ function HomePage() {
       const walletContent = {
         token: parsedData.token,
         balance: parsedData.balance,
+        curPrice: Math.random(),
       };
       items.push(walletContent);
     }
-    items.sort((a,b) => {
+    items.sort((a, b) => {
       return b.balance - a.balance;
-    })
+    });
     setLoadedWallet(items);
     setIsLoading(false);
   }, []);
