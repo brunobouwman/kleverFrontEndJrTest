@@ -3,16 +3,31 @@ import { useEffect, useState } from 'react';
 import WalletList from '../../components/wallet/walletList/walletList';
 import MainHeader from '../../components/mainHeader/mainHeader';
 import classes from './home.module.css';
-// import TransactionList from '../../components/transactionList/transactionList';
-import axios from 'axios';
 import TransactionList from '../../components/transactionList/transactionList';
+import axios from 'axios';
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedWallet, setLoadedWallet] = useState([]);
+  const [loadedList, setLoadedList] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
+
+    async function fetchList() {
+      const response = await axios.get(
+        'https://api.testnet.klever.finance/v1.0/transaction/list'
+        );
+      try {
+        if (response.status === 200) {
+          return response.data.data.transactions;
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchList()
+      .then(result => setLoadedList(result));
 
     const items = [];
     for (let i = 0; i < localStorage.length; i++) {
@@ -34,7 +49,6 @@ function HomePage() {
   }, []);
 
   if (isLoading) {
-
     return (
       <section className={classes.homePageSection}>
         <div className={classes.homePageDiv}>
@@ -53,7 +67,7 @@ function HomePage() {
       </section>
     );
   }
-  
+
   return (
     <section className={classes.homePageSection}>
       <div className={classes.homePageDiv}>
@@ -63,7 +77,7 @@ function HomePage() {
         <WalletList wallet={loadedWallet} />
       </div>
       <div>
-        <TransactionList />
+        <TransactionList transList={loadedList} />
       </div>
     </section>
   );

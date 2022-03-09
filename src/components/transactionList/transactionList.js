@@ -1,47 +1,33 @@
-import axios from 'axios';
-
 import classes from './transactionList.module.css';
 import TransactionItem from './transactionItem/transactionItem';
 
-async function TransactionList() {
-  let dataList;
-  const transactions = [];
-
-  const response = await axios.get(
-    'https://api.testnet.klever.finance/v1.0/transaction/list'
-  );
-  try {
-    dataList = response;
-  } catch (err) {
-    console.log(err);
-  }
+function TransactionList(props) {
+    console.log('here');
+  const transactionList = [];
   for (let i = 0; i < 10; i++) {
-    const singleTransactionHash = dataList.data.data.transactions[i].hash;
-    const singleTransactionSender = dataList.data.data.transactions[i].sender;
-    const singleTransactionResultCode =
-      dataList.data.data.transactions[i].resultCode;
-    const transactionsObj = {
-      transNum: i,
-      hash: singleTransactionHash,
-      sender: singleTransactionSender,
-      resCode: singleTransactionResultCode,
+    const transactions = {
+      num: i,
+      hash: props.transList[i].hash,
+      sender: props.transList[i].sender,
+      resCode: props.transList[i].resultCode,
     };
-    transactions.push(transactionsObj);
+    transactionList.push(transactions);
   }
 
-  console.log(transactions[0].hash);
+  console.log('list->',transactionList);
+
   return (
     <div className={classes.list}>
-      <ul>
-        {transactions.map((transac) => {
-          <TransactionItem
-            // transNum={transac.transNum}
-            hash={transac.hash}
-            sender={transac.sender}
-            res={transac.resCode}
-          />;
-        })}
-      </ul>
+      {/* <ul> */}
+        {/* {transactionList.map((transac) => { */}
+        {/* //   <TransactionItem */}
+        {/* //     transNum={transac.num} */}
+        {/* //     hash={transac.hash} */}
+        {/* //     sender={transac.sender} */}
+        {/* //     res={transac.resCode} */}
+        {/* //   />; */}
+        {/* })} */}
+      {/* </ul> */}
     </div>
   );
 }
