@@ -4,30 +4,18 @@ import WalletList from '../../components/wallet/walletList/walletList';
 import MainHeader from '../../components/mainHeader/mainHeader';
 import classes from './home.module.css';
 import TransactionList from '../../components/transactionList/transactionList';
-import axios from 'axios';
+import { fetchList } from '../../utilities/fetchList';
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedWallet, setLoadedWallet] = useState([]);
-  const [loadedList, setLoadedList] = useState([]);
+  const [loadedList, setLoadedList] = useState(null);
+  const URL = 'https://api.testnet.klever.finance/v1.0/transaction/list';
 
   useEffect(() => {
     setIsLoading(true);
 
-    async function fetchList() {
-      const response = await axios.get(
-        'https://api.testnet.klever.finance/v1.0/transaction/list'
-        );
-      try {
-        if (response.status === 200) {
-          return response.data.data.transactions;
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchList()
-      .then(result => setLoadedList(result));
+    fetchList(URL).then((response) => setLoadedList(response)).then(setIsLoading(false));
 
     const items = [];
     for (let i = 0; i < localStorage.length; i++) {
@@ -45,10 +33,9 @@ function HomePage() {
       return b.balance - a.balance;
     });
     setLoadedWallet(items);
-    setIsLoading(false);
   }, []);
 
-  if (isLoading) {
+  if (isLoading && !loadedList) {
     return (
       <section className={classes.homePageSection}>
         <div className={classes.homePageDiv}>
@@ -67,20 +54,21 @@ function HomePage() {
       </section>
     );
   }
-
-  return (
-    <section className={classes.homePageSection}>
-      <div className={classes.homePageDiv}>
-        <MainHeader type={'Home'} />
-      </div>
-      <div className={classes.walletContent}>
-        <WalletList wallet={loadedWallet} />
-      </div>
-      <div>
-        <TransactionList transList={loadedList} />
-      </div>
-    </section>
-  );
+  if (loadedList) {
+    return (
+      <section className={classes.homePageSection}>
+        <div className={classes.homePageDiv}>
+          <MainHeader type={'Home'} />
+        </div>
+        <div className={classes.walletContent}>
+          <WalletList wallet={loadedWallet} />
+        </div>
+        <div className={classes.walletList}>
+          <TransactionList transList={loadedList} />
+        </div>
+      </section>
+    );
+  }
 }
 
 export default HomePage;
