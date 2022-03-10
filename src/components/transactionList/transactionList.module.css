@@ -1,4 +1,13 @@
+.listDiv {
+    width: 100%;
+    min-height: fit-content;
+}
+
 .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
     width: 100%;
     min-height: fit-content;
 }

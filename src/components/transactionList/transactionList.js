@@ -4,18 +4,17 @@ import TransactionItem from './transactionItem/transactionItem';
 function TransactionList(props) {
   const transactionList = [];
   for (let i = 0; i < 10; i++) {
-    const transactions = {
+    const transaction = {
       num: i,
       hash: props.transList[i].hash,
       sender: props.transList[i].sender,
       resCode: props.transList[i].resultCode,
     };
-    transactionList.push(transactions);
-    console.log(transactionList);
+    transactionList.push(transaction);
   }
   return (
-    <div className={classes.list}>
-      <ul>
+    <div className={classes.listDiv}>
+      <ul className={classes.list}>
         {transactionList.map((transac) => {
           <TransactionItem
             transNum={transac.num}

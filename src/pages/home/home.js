@@ -9,13 +9,15 @@ import { fetchList } from '../../utilities/fetchList';
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedWallet, setLoadedWallet] = useState([]);
-  const [loadedList, setLoadedList] = useState(null);
+  const [loadedList, setLoadedList] = useState([]);
   const URL = 'https://api.testnet.klever.finance/v1.0/transaction/list';
 
   useEffect(() => {
     setIsLoading(true);
 
-    fetchList(URL).then((response) => setLoadedList(response)).then(setIsLoading(false));
+    fetchList(URL)
+      .then((response) => setLoadedList(response))
+      .then(setIsLoading(false));
 
     const items = [];
     for (let i = 0; i < localStorage.length; i++) {
@@ -35,7 +37,7 @@ function HomePage() {
     setLoadedWallet(items);
   }, []);
 
-  if (isLoading && !loadedList) {
+  if (isLoading) {
     return (
       <section className={classes.homePageSection}>
         <div className={classes.homePageDiv}>
@@ -54,21 +56,19 @@ function HomePage() {
       </section>
     );
   }
-  if (loadedList) {
-    return (
-      <section className={classes.homePageSection}>
-        <div className={classes.homePageDiv}>
-          <MainHeader type={'Home'} />
-        </div>
-        <div className={classes.walletContent}>
-          <WalletList wallet={loadedWallet} />
-        </div>
-        <div className={classes.walletList}>
-          <TransactionList transList={loadedList} />
-        </div>
-      </section>
-    );
-  }
+  return (
+    <section className={classes.homePageSection}>
+      <div className={classes.homePageDiv}>
+        <MainHeader type={'Home'} />
+      </div>
+      <div className={classes.walletContent}>
+        <WalletList wallet={loadedWallet} />
+      </div>
+      <div className={classes.walletList}>
+        <TransactionList transList={loadedList} />
+      </div>
+    </section>
+  );
 }
 
 export default HomePage;
