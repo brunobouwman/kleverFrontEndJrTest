@@ -7,17 +7,17 @@ import TransactionList from '../../components/transactionList/transactionList';
 import { fetchList } from '../../utilities/fetchList';
 
 function HomePage() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [loadedWallet, setLoadedWallet] = useState([]);
-  const [loadedList, setLoadedList] = useState([]);
+  const [loadedList, setLoadedList] = useState(null);
   const URL = 'https://api.testnet.klever.finance/v1.0/transaction/list';
 
   useEffect(() => {
-    setIsLoading(true);
+    // setIsLoading(true);
 
     fetchList(URL)
       .then((response) => setLoadedList(response))
-      .then(setIsLoading(false));
+      // .then(setIsLoading(false));
 
     const items = [];
     for (let i = 0; i < localStorage.length; i++) {
@@ -37,7 +37,7 @@ function HomePage() {
     setLoadedWallet(items);
   }, []);
 
-  if (isLoading) {
+  while(!loadedList) {
     return (
       <section className={classes.homePageSection}>
         <div className={classes.homePageDiv}>

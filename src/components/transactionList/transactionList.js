@@ -15,14 +15,14 @@ function TransactionList(props) {
   return (
     <div className={classes.listDiv}>
       <ul className={classes.list}>
-        {transactionList.map((transac) => {
+        {transactionList.map((transac) => (
           <TransactionItem
             transNum={transac.num}
             hash={transac.hash}
             sender={transac.sender}
             res={transac.resCode}
-          />;
-        })}
+          />
+         ))}
       </ul>
     </div>
   );
